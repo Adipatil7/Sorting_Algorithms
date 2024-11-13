@@ -1,8 +1,8 @@
 #include <stdio.h>
 
-void merge(int arr[], int l, int mid, int right) {
+void merge(int arr[], int l, int mid, int r) {
     int n1 = mid - l + 1;
-    int n2 = right - mid;
+    int n2 = r - mid;
     int L[n1], R[n2];
     for (int i = 0; i < n1; i++) L[i] = arr[l + i];
     for (int j = 0; j < n2; j++) R[j] = arr[mid + 1 + j];
@@ -15,12 +15,12 @@ void merge(int arr[], int l, int mid, int right) {
     while (j < n2) arr[k++] = R[j++];
 }
 
-void mergeSort(int arr[], int l, int right) {
-    if (l < right) {
-        int mid = l + (right - l) / 2;
+void mergeSort(int arr[], int l, int r) {
+    if (l < r) {
+        int mid = l + (r - l) / 2;
         mergeSort(arr, l, mid);
-        mergeSort(arr, mid + 1, right);
-        merge(arr, l, mid, right);
+        mergeSort(arr, mid + 1, r);
+        merge(arr, l, mid, r);
     }
 }
 
