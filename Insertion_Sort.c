@@ -1,14 +1,14 @@
 #include <stdio.h>
 
-void insertionSort(int arr[], int n) {
+void insertionSort(int a[], int n) {
     for (int i = 1; i < n; i++) {
-        int key = arr[i];
+        int key = a[i];
         int j = i - 1;
-        while (j >= 0 && arr[j] > key) {
-            arr[j + 1] = arr[j];
+        while (j >= 0 && a[j] > key) {
+            a[j + 1] = a[j];
             j--;
         }
-        arr[j + 1] = key;
+        a[j + 1] = key;
     }
 }
 
@@ -17,17 +17,17 @@ int main() {
     printf("Enter the number of elements: ");
     scanf("%d", &n);
 
-    int arr[n];
+    int a[n];
     printf("Enter %d integers:\n", n);
     for (int i = 0; i < n; i++) {
-        scanf("%d", &arr[i]);
+        scanf("%d", &a[i]);
     }
 
-    insertionSort(arr, n);
+    insertionSort(a, n);
 
-    printf("Sorted array:\n");
+    printf("Sorted aay:\n");
     for (int i = 0; i < n; i++) {
-        printf("%d ", arr[i]);
+        printf("%d ", a[i]);
     }
     printf("\n");
 
