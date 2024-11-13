@@ -7,9 +7,9 @@ void selectionSort(int a[], int n) {
             if (a[j] < a[mx])
                 mx = j;
         }
-        int temp = a[mx];
+        int t = a[mx];
         a[mx] = a[i];
-        a[i] = temp;
+        a[i] = t;
     }
 }
 
