@@ -1,12 +1,12 @@
 #include <stdio.h>
 
-void bubbleSort(int arr[], int n) {
+void bubbleSort(int a[], int n) {
     for (int i = 0; i < n - 1; i++) {
         for (int j = 0; j < n - i - 1; j++) {
-            if (arr[j] > arr[j + 1]) {
-                int temp = arr[j];
-                arr[j] = arr[j + 1];
-                arr[j + 1] = temp;
+            if (a[j] > a[j + 1]) {
+                int temp = a[j];
+                a[j] = a[j + 1];
+                a[j + 1] = temp;
             }
         }
     }
@@ -18,17 +18,17 @@ int main() {
     printf("Enter the number of elements: ");
     scanf("%d", &n);
 
-    int arr[n];
+    int a[n];
     printf("Enter %d integers:\n", n);
     for (int i = 0; i < n; i++) {
-        scanf("%d", &arr[i]);
+        scanf("%d", &a[i]);
     }
 
-    bubbleSort(arr, n);
+    bubbleSort(a, n);
 
     printf("Sorted array:\n");
     for (int i = 0; i < n; i++) {
-        printf("%d ", arr[i]);
+        printf("%d ", a[i]);
     }
     printf("\n");
 
