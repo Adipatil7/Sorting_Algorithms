@@ -15,11 +15,11 @@ void bubbleSort(int a[], int n) {
 int main() {
     int n;
 
-    printf("Enter the number of elements: ");
+    printf("Enter the number of Elements: ");
     scanf("%d", &n);
 
     int a[n];
-    printf("Enter %d integers:\n", n);
+    printf("Enter %d Integers:\n", n);
     for (int i = 0; i < n; i++) {
         scanf("%d", &a[i]);
     }
