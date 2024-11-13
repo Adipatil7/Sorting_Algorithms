@@ -2,13 +2,13 @@
 
 void selectionSort(int a[], int n) {
     for (int i = 0; i < n - 1; i++) {
-        int minIdx = i;
+        int mx = i;
         for (int j = i + 1; j < n; j++) {
-            if (a[j] < a[minIdx])
-                minIdx = j;
+            if (a[j] < a[mx])
+                mx = j;
         }
-        int temp = a[minIdx];
-        a[minIdx] = a[i];
+        int temp = a[mx];
+        a[mx] = a[i];
         a[i] = temp;
     }
 }
