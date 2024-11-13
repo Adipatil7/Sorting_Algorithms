@@ -1,15 +1,15 @@
 #include <stdio.h>
 
-void selectionSort(int arr[], int n) {
+void selectionSort(int a[], int n) {
     for (int i = 0; i < n - 1; i++) {
         int minIdx = i;
         for (int j = i + 1; j < n; j++) {
-            if (arr[j] < arr[minIdx])
+            if (a[j] < a[minIdx])
                 minIdx = j;
         }
-        int temp = arr[minIdx];
-        arr[minIdx] = arr[i];
-        arr[i] = temp;
+        int temp = a[minIdx];
+        a[minIdx] = a[i];
+        a[i] = temp;
     }
 }
 
@@ -18,17 +18,17 @@ int main() {
     printf("Enter the number of elements: ");
     scanf("%d", &n);
 
-    int arr[n];
+    int a[n];
     printf("Enter %d integers:\n", n);
     for (int i = 0; i < n; i++) {
-        scanf("%d", &arr[i]);
+        scanf("%d", &a[i]);
     }
 
-    selectionSort(arr, n);
+    selectionSort(a, n);
 
     printf("Sorted array:\n");
     for (int i = 0; i < n; i++) {
-        printf("%d ", arr[i]);
+        printf("%d ", a[i]);
     }
     printf("\n");
 
