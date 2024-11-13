@@ -1,19 +1,19 @@
 #include <stdio.h>
 
 int partition(int a[], int l, int high) {
-    int pivot = a[high];
+    int piv = a[high];
     int i = l - 1;
     for (int j = l; j < high; j++) {
-        if (a[j] < pivot) {
+        if (a[j] < piv) {
             i++;
-            int temp = a[i];
+            int t = a[i];
             a[i] = a[j];
-            a[j] = temp;
+            a[j] = t;
         }
     }
-    int temp = a[i + 1];
+    int t = a[i + 1];
     a[i + 1] = a[high];
-    a[high] = temp;
+    a[high] = t;
     return i + 1;
 }
 
