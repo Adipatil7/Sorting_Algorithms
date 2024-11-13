@@ -1,27 +1,27 @@
 #include <stdio.h>
 
-int partition(int arr[], int low, int high) {
-    int pivot = arr[high];
+int partition(int a[], int low, int high) {
+    int pivot = a[high];
     int i = low - 1;
     for (int j = low; j < high; j++) {
-        if (arr[j] < pivot) {
+        if (a[j] < pivot) {
             i++;
-            int temp = arr[i];
-            arr[i] = arr[j];
-            arr[j] = temp;
+            int temp = a[i];
+            a[i] = a[j];
+            a[j] = temp;
         }
     }
-    int temp = arr[i + 1];
-    arr[i + 1] = arr[high];
-    arr[high] = temp;
+    int temp = a[i + 1];
+    a[i + 1] = a[high];
+    a[high] = temp;
     return i + 1;
 }
 
-void quickSort(int arr[], int low, int high) {
+void quickSort(int a[], int low, int high) {
     if (low < high) {
-        int pi = partition(arr, low, high);
-        quickSort(arr, low, pi - 1);
-        quickSort(arr, pi + 1, high);
+        int pi = partition(a, low, high);
+        quickSort(a, low, pi - 1);
+        quickSort(a, pi + 1, high);
     }
 }
 
@@ -30,17 +30,17 @@ int main() {
     printf("Enter the number of elements: ");
     scanf("%d", &n);
 
-    int arr[n];
+    int a[n];
     printf("Enter %d integers:\n", n);
     for (int i = 0; i < n; i++) {
-        scanf("%d", &arr[i]);
+        scanf("%d", &a[i]);
     }
 
-    quickSort(arr, 0, n - 1);
+    quickSort(a, 0, n - 1);
 
     printf("Sorted array:\n");
     for (int i = 0; i < n; i++) {
-        printf("%d ", arr[i]);
+        printf("%d ", a[i]);
     }
     printf("\n");
 
