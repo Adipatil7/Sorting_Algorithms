@@ -1,9 +1,9 @@
 #include <stdio.h>
 
-int partition(int a[], int low, int high) {
+int partition(int a[], int l, int high) {
     int pivot = a[high];
-    int i = low - 1;
-    for (int j = low; j < high; j++) {
+    int i = l - 1;
+    for (int j = l; j < high; j++) {
         if (a[j] < pivot) {
             i++;
             int temp = a[i];
@@ -17,10 +17,10 @@ int partition(int a[], int low, int high) {
     return i + 1;
 }
 
-void quickSort(int a[], int low, int high) {
-    if (low < high) {
-        int pi = partition(a, low, high);
-        quickSort(a, low, pi - 1);
+void quickSort(int a[], int l, int high) {
+    if (l < high) {
+        int pi = partition(a, l, high);
+        quickSort(a, l, pi - 1);
         quickSort(a, pi + 1, high);
     }
 }
