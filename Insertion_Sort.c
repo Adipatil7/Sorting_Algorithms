@@ -14,18 +14,18 @@ void insertionSort(int a[], int n) {
 
 int main() {
     int n;
-    printf("Enter the number of elements: ");
+    printf("Enter the number of Elements: ");
     scanf("%d", &n);
 
     int a[n];
-    printf("Enter %d integers:\n", n);
+    printf("Enter %d Integers:\n", n);
     for (int i = 0; i < n; i++) {
         scanf("%d", &a[i]);
     }
 
     insertionSort(a, n);
 
-    printf("Sorted aay:\n");
+    printf("Sorted aaray:\n");
     for (int i = 0; i < n; i++) {
         printf("%d ", a[i]);
     }
